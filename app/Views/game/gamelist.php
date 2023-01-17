@@ -1,9 +1,16 @@
+<h1>Games CRUD</h1>
+<hr>
+<div class="d-flex justify-content-end">
+  <a href="<?php echo site_url('/addgame');?>" class="btn btn-primary">Add Game </a>
+</div>
+<hr>
 <table class="table" id="myTable">
   <thead>
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Detial</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +20,11 @@
             <td><?php echo $item['id']; ?></td>
             <td><?php echo $item['name']; ?></td>
             <td><?php echo $item['detail']; ?></td>
+            <td>
+            <a href="<?php echo site_url('editgame/'.$item['id']);?>" class="btn btn-warning">Edit</a>
+            
+            <a href="<?php echo site_url('deletegame/'.$item['id']);?>" onclick="return confirm('ยืนยันการลบข้อมูล !')" class="btn btn-danger">Delete </a>
+            </td>
             </tr>
         <?php endforeach; ?>
     <?php endif; ?>
