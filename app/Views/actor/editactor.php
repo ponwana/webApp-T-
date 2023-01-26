@@ -1,8 +1,10 @@
 <h1>Update Actor</h1>
 <hr>
 <div class="mt-3">
-    <form id="update-form" action="<?= site_url('/updateactor'); ?>" method="post" name="updateactor">
+    <form id="update-form" action="<?= site_url('/updateactor'); ?>" enctype="multipart/form-data" method="post" name="updateactor">
     <input type="hidden" name="id" id="id" value="<?php echo $person_obj['id']; ?>">
+
+    <input type="hidden" name="old_image" id="id" value="<?php echo $person_obj['image']; ?>">
     <div class="form-group">
         <label for="name"> Name </label>
         <input type="text" name="name" class="form-control" value="<?php echo $person_obj['name']; ?>">
@@ -53,7 +55,8 @@
 
     <div class="form-group">
         <label for="image"> Image </label>
-        <input type="text" name="image" value="<?php echo $person_obj['image']; ?>" class="form-control">
+        <img src="<?php echo base_url('images/' . $person_obj['image']); ?>" width="100" height="100">
+        <input type="file" name="image" value="<?php echo $person_obj['image']; ?>" class="form-control">
     </div>
 
     <div class="form-group">

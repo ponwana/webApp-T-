@@ -1,7 +1,7 @@
 <h1>Add Actor</h1>
 <hr>
 <div class="mt-3">
-    <form id="add-form" action="<?= site_url('/actor-form'); ?>" method="post" name="addactor">
+    <form id="add-form" action="<?= site_url('/actor-form'); ?>" enctype="multipart/form-data" method="post" name="addactor">
     <div class="form-group">
         <label for="name"> Name </label>
         <input type="text" name="name" class="form-control">
@@ -52,7 +52,7 @@
 
     <div class="form-group">
         <label for="image"> Image </label>
-        <input type="text" name="image" class="form-control">
+        <input type="file" name="image" class="form-control">
     </div>
 
     <div class="form-group">

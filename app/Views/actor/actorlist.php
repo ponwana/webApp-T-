@@ -23,7 +23,7 @@
             <td><?php echo $person['id']; ?></td>
             <td><?php echo $person['name']; ?></td>
             <td><?php echo $person['address']; ?></td>
-            <td><?php echo $person['image']; ?></td>
+            <td><img src="<?php echo base_url('images/' . $person['image']); ?>" width="100" height="100"></td>
             <td>
             <a href="<?php echo site_url('editactor/'.$person['id']);?>" class="btn btn-warning">Edit</a>
             <a href="<?php echo site_url('deleteactor/'.$person['id']);?>" onclick="return confirm('ยืนยันการลบข้อมูล !')" class="btn btn-danger">Delete </a>
