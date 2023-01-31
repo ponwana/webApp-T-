@@ -100,10 +100,10 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="<?php echo site_url('/login'); ?>">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
+            <a class="nav-link" href="<?php echo site_url('/logout'); ?>"">Logout</a>
           </li>
         </ul>
         <form class="d-flex" role="search">

@@ -42,12 +42,13 @@ $routes->get('test/page1', 'TestController::page1');
 $routes->get('test/testlist', 'TestController::testlist');
 
 // actor
-$routes->get('actorlist', 'ActorController::index');
+$routes->get('actorlist', 'ActorController::index',['filter'=> 'auth']);
 $routes->get('addactor', 'ActorController::create');
 $routes->post('actor-form', 'ActorController::store');
 $routes->get('editactor/(:num)', 'ActorController::ActorByID/$1');
 $routes->post('updateactor', 'ActorController::update');
 $routes->get('deleteactor/(:num)', 'ActorController::delete/$1');
+$routes->get('actorshow', 'ActorController::actorshow');
 
 //game
 $routes->get('gamelist', 'GameController::index');
@@ -57,6 +58,11 @@ $routes->get('editgame/(:num)', 'GameController::GameByID/$1');
 $routes->post('updategame', 'GameController::update');
 $routes->get('deletegame/(:num)', 'GameController::delete/$1');
 
+
+// login
+$routes->get('login', 'LoginController::index');
+$routes->post('login/auth', 'LoginController::auth');
+$routes->get('logout', 'LoginController::logout');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

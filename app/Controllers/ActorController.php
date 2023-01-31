@@ -15,6 +15,16 @@ class ActorController extends BaseController
             .view('templates/footer');
     }
 
+    public function actorshow()
+    {
+        $ActorModel = new ActorModel();
+        $data['persons'] = $ActorModel->orderBy('id', 'DESE')->findAll();
+        
+        return view('templates/header')
+            .view('actor/actorshow',$data)
+            .view('templates/footer');
+    }
+
     public function create(){
         return view('templates/header')
             .view('actor/addactor')
